@@ -1,4 +1,5 @@
 <?php
+session_start();
     $x = 20;
 
     $menu = [
@@ -6,6 +7,7 @@
         "Vịt quay Bắc Kinh",
         "Bò bít tết"
     ];
+$email = isset($_SESSION["email"])?$_SESSION["email"]:"";
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,7 +15,7 @@
     <?php include("head.php");?>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <h1>Hello world! <?php echo $email;?></h1>
     <h2>Số lượng sinh viên: <?php echo $x+5;// cho nay viet dc code php ?></h2>
     <?php if($x>=20): ?>
             <h3>Lớp đông <?php echo $x;?></h3>

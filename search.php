@@ -1,4 +1,8 @@
-<?php $title="Search"; ?>
+<?php
+session_start();
+$title="Search";
+$email = isset($_SESSION["email"])?$_SESSION["email"]:"";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,6 +11,7 @@
 <body>
     <section>
         <div class="container">
+            <h1>Hello: <?php echo $email;?></h1>
             <div class="row">
                 <div class="col"></div>
                 <div class="col">

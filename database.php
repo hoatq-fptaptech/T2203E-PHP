@@ -9,7 +9,15 @@ if($conn->connect_error){
     echo $conn->error;
     die();
 }
-$sql = "select * from books";
+$whereSQL = " where 1 ";
+if(isset($_GET["name"])){
+    $wname= $_GET["name"];
+    $whereSQL .= " and name like '%$wname%' ";
+}
+
+$orderSQL = "";
+
+$sql = "select * from books $whereSQL";
 
 $rs = $conn->query($sql);
 $data = [];
